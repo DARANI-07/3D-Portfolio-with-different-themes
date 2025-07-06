@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Github, Mail, ExternalLink, Menu, X } from 'lucide-react';
+import profilePhoto from '../assets/profile-photo.png';
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -145,16 +146,16 @@ const Index = () => {
     return (
       <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
         <div className="text-center space-y-8">
-          <h1 className="text-6xl md:text-8xl font-bold glow-text">
+          <h1 className="text-6xl md:text-8xl font-bold text-white glow-text">
             DARANIDARAN S
           </h1>
-          <div className="w-80 h-2 bg-muted rounded-full overflow-hidden">
+          <div className="w-80 h-2 bg-muted/30 rounded-full overflow-hidden">
             <div 
               className="h-full loading-bar rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-xl text-muted-foreground">{progress}%</p>
+          <p className="text-xl text-white/80">{progress}%</p>
         </div>
       </div>
     );
@@ -220,7 +221,12 @@ const Index = () => {
         ref={(el) => sectionsRef.current.home = el}
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
         style={{
-          background: 'radial-gradient(ellipse at center, hsl(var(--glow-primary) / 0.1) 0%, transparent 70%)'
+          background: `
+            radial-gradient(ellipse 80% 50% at 50% 50%, hsl(var(--glow-primary) / 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 20% 70%, hsl(var(--glow-secondary) / 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse 40% 30% at 80% 30%, hsl(var(--neon-cyan) / 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--background)) 100%)
+          `
         }}
       >
         <div className="text-center space-y-6 animate-fadeInUp">
@@ -250,8 +256,12 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="w-80 h-80 mx-auto rounded-full glow-border bg-muted flex items-center justify-center">
-                <div className="text-6xl">👨‍💻</div>
+              <div className="w-80 h-80 mx-auto rounded-full glow-border bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={profilePhoto} 
+                  alt="Daranidaran S - Profile Picture"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <div className="text-center space-y-4">
                 <div className="grid grid-cols-3 gap-4">
