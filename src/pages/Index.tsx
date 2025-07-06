@@ -144,18 +144,20 @@ const Index = () => {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
         <div className="text-center space-y-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-white glow-text">
+          <h1 className="text-6xl md:text-8xl font-bold text-white" style={{
+            textShadow: '0 0 10px hsl(var(--neon-blue)), 0 0 20px hsl(var(--neon-blue)), 0 0 30px hsl(var(--neon-blue))'
+          }}>
             DARANIDARAN S
           </h1>
-          <div className="w-80 h-2 bg-muted/30 rounded-full overflow-hidden">
+          <div className="w-80 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">
             <div 
               className="h-full loading-bar rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-xl text-white/80">{progress}%</p>
+          <p className="text-xl text-white font-semibold">{progress}%</p>
         </div>
       </div>
     );
@@ -256,11 +258,18 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="w-80 h-80 mx-auto rounded-full glow-border bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden">
+              <div className="w-80 h-80 mx-auto rounded-full overflow-hidden relative" style={{
+                background: 'linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-blue) / 0.8))',
+                padding: '6px',
+                boxShadow: '0 0 30px hsl(var(--neon-blue) / 0.6), 0 0 50px hsl(var(--neon-blue) / 0.4), inset 0 0 20px hsl(var(--neon-blue) / 0.3)'
+              }}>
                 <img 
                   src={profilePhoto} 
                   alt="Daranidaran S - Profile Picture"
                   className="w-full h-full object-cover rounded-full"
+                  style={{
+                    filter: 'brightness(1.1) contrast(1.1)'
+                  }}
                 />
               </div>
               <div className="text-center space-y-4">
@@ -524,12 +533,20 @@ const Index = () => {
 
                 <div className="text-center pt-6 border-t border-border">
                   <p className="text-muted-foreground mb-4">Or reach me directly at:</p>
-                  <a 
-                    href="mailto:daranidaran08@gmail.com"
-                    className="text-primary hover:text-primary/80 font-medium text-lg glow-text"
-                  >
-                    daranidaran08@gmail.com
-                  </a>
+                  <div className="space-y-2">
+                    <a 
+                      href="mailto:daranidaran08@gmail.com"
+                      className="text-primary hover:text-primary/80 font-medium text-lg glow-text block"
+                    >
+                      daranidaran08@gmail.com
+                    </a>
+                    <a 
+                      href="tel:+918610156399"
+                      className="text-primary hover:text-primary/80 font-medium text-lg glow-text block"
+                    >
+                      +91 8610156399
+                    </a>
+                  </div>
                 </div>
               </div>
             </Card>
