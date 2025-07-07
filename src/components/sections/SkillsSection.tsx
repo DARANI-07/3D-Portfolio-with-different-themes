@@ -29,7 +29,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ sectionsRef }) => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             My <span className="glow-text">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -40,7 +40,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ sectionsRef }) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {['Frontend', 'Backend', 'Tools'].map((category) => (
             <Card key={category} className="glow-card p-6">
-              <h3 className="text-xl font-semibold mb-6 text-center">
+              <h3 className="text-xl font-semibold mb-6 text-center text-white">
                 {category} Development
               </h3>
               <div className="space-y-4">

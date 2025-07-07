@@ -21,7 +21,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ sectionsRef, scrollToSection 
       }}
     >
       <div className="text-center space-y-6 animate-fadeInUp">
-        <h1 className="text-4xl md:text-7xl font-bold">
+        <h1 className="text-4xl md:text-7xl font-bold text-white">
           Hi, I'm <span className="glow-text">Daranidaran</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">

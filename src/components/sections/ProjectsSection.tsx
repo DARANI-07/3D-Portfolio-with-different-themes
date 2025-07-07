@@ -61,7 +61,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ sectionsRef }) => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             Featured <span className="glow-text">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -74,7 +74,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ sectionsRef }) => {
             <Card key={idx} className="glow-card p-6 group hover:scale-105 transition-transform">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">{project.title}</h3>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <span>⭐ {project.stars}</span>
                     <span>🍴 {project.forks}</span>

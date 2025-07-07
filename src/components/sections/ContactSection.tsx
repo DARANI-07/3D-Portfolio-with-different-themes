@@ -17,7 +17,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ sectionsRef }) => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             Get In <span className="glow-text">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -31,7 +31,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ sectionsRef }) => {
               <div className="w-20 h-20 rounded-full neon-gradient flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-white">Let's Connect</h3>
               <p className="text-muted-foreground">
                 Ready to start your next project? Drop me a message!
               </p>

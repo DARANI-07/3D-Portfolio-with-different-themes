@@ -47,7 +47,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ sectionsRef }) => {
           </div>
           
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-bold text-white">
               About <span className="glow-text">Me</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
