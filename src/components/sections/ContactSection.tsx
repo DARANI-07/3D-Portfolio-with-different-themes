@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 interface ContactSectionProps {
   sectionsRef: React.MutableRefObject<{ [key: string]: HTMLElement | null }>;
@@ -68,7 +68,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ sectionsRef }) => {
 
               <div className="text-center pt-6 border-t border-border">
                 <p className="text-muted-foreground mb-4">Or reach me directly at:</p>
-                <div className="space-y-2">
+                <div className="space-y-2 mb-6">
                   <a 
                     href="mailto:daranidaran08@gmail.com"
                     className="text-primary hover:text-primary/80 font-medium text-lg glow-text block"
@@ -81,6 +81,27 @@ const ContactSection: React.FC<ContactSectionProps> = ({ sectionsRef }) => {
                   >
                     +91 8610156399
                   </a>
+                </div>
+                
+                <div className="flex justify-center space-x-4">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="glow-border"
+                    onClick={() => window.open('https://github.com/DARANI-07', '_blank')}
+                  >
+                    <Github className="w-5 h-5 mr-2" />
+                    GitHub
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="glow-border"
+                    onClick={() => window.open('https://www.linkedin.com/in/daranidaran-s-263700328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', '_blank')}
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    LinkedIn
+                  </Button>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -7,6 +7,9 @@ interface SkillsSectionProps {
 }
 
 const SkillsSection: React.FC<SkillsSectionProps> = ({ sectionsRef }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  
   const skills = [
     { name: 'HTML5', percentage: 95, category: 'Frontend' },
     { name: 'CSS3', percentage: 90, category: 'Frontend' },
@@ -22,9 +25,29 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ sectionsRef }) => {
     { name: 'Figma', percentage: 85, category: 'Tools' }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section 
-      ref={(el) => sectionsRef.current.skills = el}
+      ref={(el) => {
+        sectionsRef.current.skills = el;
+        sectionRef.current = el;
+      }}
       className="min-h-screen flex items-center py-20"
     >
       <div className="container mx-auto px-6">
@@ -55,7 +78,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ sectionsRef }) => {
                       <div className="w-full bg-muted rounded-full h-2">
                         <div 
                           className="progress-bar h-2 rounded-full transition-all duration-1000 delay-300"
-                          style={{ width: `${skill.percentage}%` }}
+                          style={{ width: isVisible ? `${skill.percentage}%` : '0%' }}
                         />
                       </div>
                     </div>

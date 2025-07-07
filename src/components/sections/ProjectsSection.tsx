@@ -15,42 +15,48 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ sectionsRef }) => {
       description: 'A innovative project showcasing modern development practices and creative problem-solving approaches.',
       tech: 'HTML',
       stars: 1,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     },
     {
       title: 'Social Media Platform',
       description: 'A innovative project showcasing modern development practices and creative problem-solving approaches.',
       tech: 'JavaScript',
       stars: 0,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     },
     {
       title: 'Katomaran Todo App',
       description: 'This project is a part of Hackathon run by https://www.katomaran.com',
       tech: 'TypeScript',
       stars: 0,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     },
     {
       title: 'AI/ML Project',
       description: 'An innovative AI/ML project leveraging machine learning algorithms for intelligent data analysis and predictions.',
       tech: 'Python',
       stars: 0,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     },
     {
       title: 'Task Management System',
       description: 'A innovative project showcasing modern development practices and creative problem-solving approaches.',
       tech: 'Python',
       stars: 0,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     },
     {
       title: 'Number Puzzle Game',
       description: 'A innovative project showcasing modern development practices and creative problem-solving approaches.',
       tech: 'JavaScript',
       stars: 0,
-      forks: 0
+      forks: 0,
+      github: 'https://github.com/DARANI-07'
     }
   ];
 
@@ -89,7 +95,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ sectionsRef }) => {
                   {project.description}
                 </p>
                 
-                <Button variant="outline" className="w-full glow-border group-hover:animate-glow">
+                <Button 
+                  variant="outline" 
+                  className="w-full glow-border group-hover:animate-glow"
+                  onClick={() => window.open(project.github, '_blank')}
+                >
                   <Github className="w-4 h-4 mr-2" />
                   Code
                 </Button>
